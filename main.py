@@ -1,7 +1,7 @@
 import requests
 import time
 import argparse
-import os
+from argparse import RawTextHelpFormatter
 import sys
 
 '''
@@ -18,7 +18,8 @@ import sys
 	'''
  
  # Create the parser
-parser = argparse.ArgumentParser(description='Delete Slack messages from a specified channel.   python3 main.py -u xoxp-xxxxxxx -m U0xxxxxxx -c D0xxxxxxx')
+parser = argparse.ArgumentParser(description='Delete Slack messages from a specified channel.\n'
+                                 'Example:\n   python3 main.py -u xoxp-xxxxxxx -m U0xxxxxxx -c D0xxxxxxx',formatter_class=RawTextHelpFormatter)
 
 # Add the arguments
 parser.add_argument('-u', '--user_token', type=str, required=True, help='User OAuth token starting with "xoxp-"')
